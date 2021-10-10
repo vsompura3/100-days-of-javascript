@@ -1,6 +1,7 @@
 // Select the elements from the page
 const container = document.getElementById('container');
-const text = document.querySelector('span');
+const hexText = document.querySelector('#hex');
+const rgbText = document.querySelector('#rgb');
 const button = document.getElementById('generate-color');
 
 // Array for Hex Color [letters and digits]
@@ -16,16 +17,13 @@ function generateColor() {
     const randomNumber = Math.floor(Math.random() * hexCodes.length);
     colorCode += hexCodes[randomNumber];
   }
-
+  
   // Set container's background as generated hexcolor
   container.style.backgroundColor = colorCode;
   // Set the text of the span as colorCode
-  text.textContent = colorCode;
+  hex.textContent = colorCode;
+  rgbText.textContent = container.style.backgroundColor;
 }
 
 // Generate the backgroundColor when button is clicked
 button.addEventListener('click', generateColor);
-
-
-
-
